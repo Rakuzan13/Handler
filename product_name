@@ -1,0 +1,21 @@
+                      product_name   price  quantity_available     category    brand shipping_method  customer_rating
+0               Fresh Strawberries  507.86                 125       beauty   Adidas        standard              3.5
+1                Honey Mustard Dip  209.26                 879     clothing     Nike        same-day              1.6
+2             Leek and Potato Soup  635.54                 111  electronics     Nike         express              2.4
+3                Caraway Rye Bread  480.61                 511  electronics     Nike        same-day              3.7
+4         Travel Jewelry Organizer  441.27                 636   home decor   Adidas        standard              4.0
+5                  Popcorn Chicken  518.29                 899     clothing     Nike         express              4.0
+6                Pesto Pasta Salad  208.99                 521     clothing   Adidas         express              2.3
+7   Travel Pillow with Memory Foam  592.77                 975       beauty     Sony        standard              4.8
+8                 Electric Hot Pot  324.22                 257     clothing     Nike        same-day              2.3
+9     Stainless Steel Water Bottle  503.11                 371  electronics     Sony        standard              5.0
+10                   Window Blinds  423.67                 856       beauty     Nike        standard              4.5
+11          Cinnamon Sugar Popcorn  894.72                 522     clothing     Nike        standard              1.4
+12           Chili Lime Corn Chips  585.43                 769         toys     Sony         express              2.9
+13       Sweet Chili Dipping Sauce  769.36                 848  electronics     Sony         express              2.2
+14              Sports Windbreaker  980.83                 158     clothing     Sony         express              4.4
+15            Eco-Friendly Notepad   81.18                 304     clothing    Apple         express              1.7
+16                 Frozen Burritos  163.97                 626       beauty  Samsung        standard              2.4
+17        Reversible Comforter Set  292.41                 897  electronics   Adidas         express              3.4
+18                Satin Slip Dress  247.06                 214   home decor   Adidas        standard              4.2
+19           Pumpkin Spice Muffins  126.12                 117         toys  Samsung        standard              1.2
