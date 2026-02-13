@@ -1,8 +1,9 @@
 import pandas as pd
 import csv
-df=pd.read_csv("data/e_commerce.csv")
+df=pd.read_csv("data/tmdb_movies.csv")
 
-del df["shipping_method"]
-df.to_csv("processed/data1",index=False)
+dfs=df.copy()
 
-print(df)
+df["vote_average"]=df["vote_average"].round(3)
+
+dfs.to_csv("processed/tmdb.csv",float_format="%.2f",index=False)
