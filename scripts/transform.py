@@ -1,26 +1,16 @@
 import pandas as pd
 
-df=pd.read_csv("processed/anime_dataset_cleaned.csv")
+df=pd.read_csv("processed/cars_cleaned.csv")
 
+print(df.dtypes)
 
-df=df.dropna()
+df["price"]=df["price"].astype(float)
 
-df.drop(columns=["url"],inplace=True)
-df.drop(columns=["synopsis"],inplace=True)
-df.drop(columns=["favorites"],inplace=True)
-df.drop(columns=["airing"],inplace=True)
-df.drop(columns=["title"],inplace=True)
-df.rename(columns={"title_english":"title"},inplace=True)
+df["price_hors_taxe"]=(df["price"]/df["tax"]).round(2)
 
+df.rename(columns={'Make':'brand'},inplace=True)
 
-df["episodes"] = df["episodes"].astype(int)
-df["rank"] = df["rank"].astype(int)
-df["year"] = df["year"].astype(int)
+print(df.groupby('brand')['tax'].sum())
 
-df=df.reset_index(drop=True)
-
-print(df.columns)
-print(df.status.head())
-
-df.to_csv("processed/anime_dataset_cleaned.csv",index=False)
-
+print(df.head(3))
+print(df.tail(3))
