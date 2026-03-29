@@ -1,16 +1,11 @@
 import pandas as pd
 
-df=pd.read_csv("processed/cars_cleaned.csv")
+def transform(file_path):
+    df=pd.read_csv(file_path)
+    df=df.dropna()
+    df["Year"]=df["Year"].astype(int)
+    df.reset_index(drop=True, inplace=True)
+    df.to_csv(file_path)
+    return df
+transform(file_path="processed/cleaned_video_game_sales.csv")
 
-print(df.dtypes)
-
-df["price"]=df["price"].astype(float)
-
-df["price_hors_taxe"]=(df["price"]/df["tax"]).round(2)
-
-df.rename(columns={'Make':'brand'},inplace=True)
-
-print(df.groupby('brand')['tax'].sum())
-
-print(df.head(3))
-print(df.tail(3))

@@ -1,9 +1,9 @@
 import pandas as pd
 import csv
 
-df=pd.read_csv("data/cars_dataset.csv")
-
-print(df.head(3))
-print(df.tail(3))
-
-df.to_csv("processed/cars_cleaned.csv",index=False)
+def extract(file_path,next_path):
+    #this function take the data file and copy it to another path
+    df=pd.read_csv(file_path)
+    df.to_csv(next_path,index=False)
+    return df
+print(extract(file_path="data/video_game_sales.csv",next_path="processed/cleaned_video_game_sales.csv"))
