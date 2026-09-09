@@ -1,6 +1,4 @@
-
-alter table type_chambre
-alter COLUMN nom_type TYPE VARCHAR(50)  
+-- Active: 1786729921416@@127.0.0.1@5432
 
 -- Insert data into 'client'
 INSERT INTO
@@ -12,27 +10,38 @@ VALUES
     ('cli-2026-000004','novak djokovic','nole@gmail.com','svk','1987-05-22','VIP'),
     ('cli-2026-000005','tom brady','bradyt@gmail.com','usa','1997-08-03','particulier');
 
+SELECT conname
+from pg_constraint
+where conrelid='type_chambre'::regclass;
+
+ALTER table type_chambre 
+DROP CONSTRAINT type_chambre_nom_type_check;
+ALTER table type_chambre 
+ADD CONSTRAINT type_chambre_nom_type_check
+CHECK(nom_type in ('simple','suite','familiale'))
+
+
 -- Insert data into 'Type_chambre'
 INSERT INTO
     Type_chambre (nom_type, prix)
 VALUES
     ('simple', 25000),
-    ('suite', 25000),
+    ('suite', 60000),
     ('familiale', 85000)
 
 
-
+select * from type_chambre
 
     -- Insert data into 'chambre'
 INSERT INTO
     chambre (num_chambre, etage, id_type, statut)
 VALUES
-    (101, 1, 1,'disponible'),
-    (102, 1, 1,'occupée'),
-    (201, 2, 2,'réservée'),
-    (202, 2, 2,'disponible'),
-    (301, 3, 3,'maintenance'),
-    (302, 3, 3,'disponible')
+    (101, 3, 2,'disponible'),
+    (102, 3, 2,'occupée'),
+    (201, 4, 4,'réservée'),
+    (202, 4, 4,'disponible'),
+    (301, 5, 5,'maintenance'),
+    (302, 5, 5,'disponible')
 
     -- Insert data into 'reservation'
 INSERT INTO
